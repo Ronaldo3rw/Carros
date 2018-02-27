@@ -1,7 +1,9 @@
-package br.com.tresrw.carros;
+package br.com.tresrw.carros.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.com.tresrw.carros.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
