@@ -20,34 +20,45 @@ import br.com.tresrw.carros.listener.OnListClickInteractionListener;
 public class MainActivity extends AppCompatActivity {
 
     ViewHolder mViewHolder = new ViewHolder();
-    private Context mContext;
+    private Context mContext; // Cria uma variaval para o contexto.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Mostrar icone na barra superior
+        getSupportActionBar().setDisplayShowTitleEnabled(true);    // informa que o título da aplicação não será exibido - false
+        getSupportActionBar().setDisplayShowHomeEnabled(true);      // informa que vou exibir uma imagem
+        //getSupportActionBar().setIcon(R.mipmap.ic_launcher);        // Configura o icone a ser exibido
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher_carros);
+
+        // Instância o contexto que é o mesmo de onCreate
         this.mContext = this;
 
-        CarMock carMock = new CarMock();        // Instância a classe carMok para gerar massa de dados
+        // Mock de Dados
+        CarMock carMock = new CarMock(this);        // Instância a classe carMok para gerar massa de dados
         List<Car> carList = new ArrayList<>();  // Instância uma lista de carros vazia que será preenchida com o Array
         carList.addAll(carMock.getList());     // adiciona uma colection (carMock) na carList com o Array
-
 
         // 1 - Obter a recyclerview
         this.mViewHolder.recyclerCars = (RecyclerView) this.findViewById(R.id.recycler_cars);
 
+        // Implementação da Interface
         OnListClickInteractionListener listener = new OnListClickInteractionListener() {
+            // tratamento do click
             @Override
             public void onClick(int id) {
-                Bundle bundle = new Bundle();
-                bundle.putInt(CarrosConstants.CARRO_ID, id);
+                Bundle bundle = new Bundle(); // Abre a classe de detalhes passando valores por parametro
+                bundle.putInt(CarrosConstants.CARRO_ID, id); // pega o id do carro que foi clicado
 
+                // Cria ima intenção em fazer uma ação
+                // Como não tenho acesso ao contexto dentro dessa função, criei uma variaval mContext para o contexto.(acima)
+                // Para abrir a classe DetailsActivity
                 Intent intent = new Intent(mContext, DetailsActivity.class);
-                intent.putExtras(bundle);
+                intent.putExtras(bundle); //
 
                 startActivity(intent);
-
 
             }
         };

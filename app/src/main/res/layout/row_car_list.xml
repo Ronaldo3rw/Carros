@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:layout_margin="5dp"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    card_view:cardBackgroundColor="@color/colorBackLight"
+    card_view:cardCornerRadius="4dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_car_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/audir8" />
+
+        <TextView
+            android:id="@+id/text_car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/img_car_pic"
+            android:layout_alignStart="@id/img_car_pic"
+            android:layout_below="@+id/img_car_pic"
+            android:layout_marginTop="5dp"
+            android:text="@string/modelo"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_view_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/img_car_pic"
+            android:layout_alignRight="@id/img_car_pic"
+            android:layout_below="@id/img_car_pic"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/ver_detalhes"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <!--
     <TextView
         android:id="@+id/text_model"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:text="@string/modelo" />
+    -->
 
-</LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -5,47 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     tools:context="br.com.tresrw.carros.views.DetailsActivity">
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/img_car_pic"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/modelo" />
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/audir8" />
 
     <TextView
-        android:id="@+id/text_model"
-        android:layout_width="match_parent"
+        android:id="@+id/text_car_model"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/modelo" />
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="@string/modelo"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/text_manufacturer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/cavalos" />
+        android:layout_gravity="center"
+        android:text="@string/fabricante"
+        android:textAllCaps="true"
+        android:textSize="10sp" />
 
     <TextView
         android:id="@+id/text_horse_power"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cavalos" />
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="@string/cavalos"
+        android:textSize="55sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/preco" />
-
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:text="@string/cavalos"/>
 
     <TextView
         android:id="@+id/text_price"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/preco" />
+        android:text="@string/valor"
+        android:textStyle="bold"
+        android:textSize="45sp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/text_valor"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/valor"
+        android:textAllCaps="true"
+        android:textSize="10sp"
+        android:textStyle="bold"
+
+        />
 
 </android.support.v7.widget.LinearLayoutCompat>
 

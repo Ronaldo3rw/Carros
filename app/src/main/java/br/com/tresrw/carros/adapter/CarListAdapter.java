@@ -20,16 +20,16 @@ import br.com.tresrw.carros.viewholder.CarViewHolder;
 public class CarListAdapter extends RecyclerView.Adapter<CarViewHolder>{
 
     private List<Car> mListCars;
-    private OnListClickInteractionListener mOnListClickInteractionListener;
+    private OnListClickInteractionListener mOnListClickInteractionListener;  // Declara a interface
 
     /*
     private int mCountOnCreate = 0;
     private int mCountOnBind = 0;
     */
 
-    public CarListAdapter(List<Car> cars, OnListClickInteractionListener listener){
+    public CarListAdapter(List<Car> cars, OnListClickInteractionListener listener){     //
         this.mListCars = cars;
-        this.mOnListClickInteractionListener = listener;
+        this.mOnListClickInteractionListener = listener;    // Passa a interface por parâmetro
     }
 
 
@@ -53,7 +53,7 @@ public class CarListAdapter extends RecyclerView.Adapter<CarViewHolder>{
     public void onBindViewHolder(CarViewHolder holder, int position) {
         // this.mCountOnBind++;
         Car car = this.mListCars.get(position);
-        holder.bindData(car, this.mOnListClickInteractionListener);
+        holder.bindData(car, this.mOnListClickInteractionListener); // passa a interface para a ViewHolder
 
     }
 
